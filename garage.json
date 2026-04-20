@@ -1,6 +1,6 @@
 [
     {
-        "year": 1995,
+        "year": 1996,
         "make": "Chevy",
         "model": "Tahoe"
     },
@@ -13,5 +13,10 @@
         "year": 2008,
         "make": "Chevy",
         "model": "Tahoe"
+    },
+    {
+        "year": 2005,
+        "make": "Honda",
+        "model": "Civic"
     }
 ]
