@@ -2,21 +2,37 @@
     {
         "year": 1996,
         "make": "Chevy",
-        "model": "Tahoe"
+        "model": "Tahoe",
+        "mileage": 0
     },
     {
         "year": 2020,
         "make": "Chevy",
-        "model": "Tahoe"
+        "model": "Tahoe",
+        "mileage": 0
     },
     {
         "year": 2008,
         "make": "Chevy",
-        "model": "Tahoe"
+        "model": "Tahoe",
+        "mileage": 0
     },
     {
         "year": 2005,
         "make": "Honda",
-        "model": "Civic"
+        "model": "Accord",
+        "mileage": 0
+    },
+    {
+        "year": 2020,
+        "make": "Honda",
+        "model": "Civic",
+        "mileage": 150000
+    },
+    {
+        "year": 2020,
+        "make": "Toyota",
+        "model": "Supra",
+        "mileage": 20000
     }
 ]
