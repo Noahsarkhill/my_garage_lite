@@ -1,2 +1,5 @@
+.venv
 __pycache__/
 *.pyc
+dev_notes.txt
+scratch_sheet.py
