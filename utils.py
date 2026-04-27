@@ -1,4 +1,3 @@
-
 # Helper function for number input validation
 def get_int(prompt, min_value=None, max_value=None):
     while True:

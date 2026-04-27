@@ -1,6 +1,6 @@
 from vehicle import Vehicle
 from utils import get_int, get_valid_text
-from save_load import save_garage
+from db import save_vehicle_db, update_vehicle_db, delete_vehicle_db
 
 
 # constant variables for the vehicle years range
@@ -44,10 +44,14 @@ def add_vehicle(garage):
 
     mileage = get_int("What is your vehicles mileage: ", 0)
 
-    new_vehicle = Vehicle(year, make, model, mileage)
+    new_vehicle = Vehicle(None, year, make, model, mileage)
 
     garage.append(new_vehicle)
-    save_garage(garage)
+    new_id = save_vehicle_db(new_vehicle.year, new_vehicle.make,
+                             new_vehicle.model, new_vehicle.mileage)
+
+    new_vehicle.id = new_id
+
     print(f"{year} {make} {model} {mileage} saved!")
 
 
@@ -103,7 +107,13 @@ def edit_vehicle(garage):
 
         print(f"{selected_car.mileage} updated!")
 
-    save_garage(garage)
+    update_vehicle_db(
+        selected_car.id,
+        selected_car.year,
+        selected_car.make,
+        selected_car.model,
+        selected_car.mileage
+    )
 
 
 def search_vehicles(garage):
@@ -144,6 +154,5 @@ def delete_vehicle(garage):
                           1, len(garage) + 1) - 1
 
     deleted_car = garage.pop(user_delete)
+    delete_vehicle_db(deleted_car.id)
     print(f"You Deleted {deleted_car}")
-
-    save_garage(garage)
