@@ -1,7 +1,7 @@
 from save_load import load_garage
 from garage_manager import view_garage, add_vehicle, search_vehicles
 from utils import get_int
-
+import os
 
 def main_menu():
     garage = load_garage()
