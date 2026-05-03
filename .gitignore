@@ -4,3 +4,4 @@ __pycache__/
 dev_notes.txt
 scratch_sheet.py
 .env
+.vscode/

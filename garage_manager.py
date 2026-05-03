@@ -46,11 +46,11 @@ def add_vehicle(garage):
 
     new_vehicle = Vehicle(None, year, make, model, mileage)
 
-    garage.append(new_vehicle)
     new_id = save_vehicle_db(new_vehicle.year, new_vehicle.make,
                              new_vehicle.model, new_vehicle.mileage)
 
     new_vehicle.id = new_id
+    garage.append(new_vehicle)
 
     print(f"{year} {make} {model} {mileage} saved!")
 
@@ -153,6 +153,11 @@ def delete_vehicle(garage):
     user_delete = get_int("Which car would you like to delete: ",
                           1, len(garage) + 1) - 1
 
+
+    selected_car = garage[user_delete]
+
+    delete_vehicle_db(selected_car.id)
+
     deleted_car = garage.pop(user_delete)
-    delete_vehicle_db(deleted_car.id)
+
     print(f"You Deleted {deleted_car}")

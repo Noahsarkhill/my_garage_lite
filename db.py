@@ -5,7 +5,6 @@ import psycopg2
 load_dotenv()
 
 
-
 def create_connection():
     try:
         connection = psycopg2.connect(dbname=os.getenv("DB_NAME"), 
@@ -19,7 +18,7 @@ def create_connection():
     except Exception as e:
         print(e)
         return None
-    
+
 
 def save_vehicle_db(year, make, model, mileage):
     connection = create_connection()
@@ -35,7 +34,8 @@ def save_vehicle_db(year, make, model, mileage):
     else:
         print("failed")
         return None
-    
+
+
 def update_vehicle_db(vehicle_id, year, make, model, mileage):
     connection = create_connection()
 
@@ -47,7 +47,8 @@ def update_vehicle_db(vehicle_id, year, make, model, mileage):
     else:
         print("Update failed")
         return None
-    
+
+
 def delete_vehicle_db(vehicle_id):
     connection = create_connection()
 
@@ -58,7 +59,6 @@ def delete_vehicle_db(vehicle_id):
         connection.close()
     else:
         print("Deletion failed")
-
 
 
 def load_vehicle_db():
@@ -72,5 +72,3 @@ def load_vehicle_db():
         return rows
     else:
         return []
-    
-
