@@ -48,7 +48,10 @@ def add_vehicle(garage):
 
     new_id = save_vehicle_db(new_vehicle.year, new_vehicle.make,
                              new_vehicle.model, new_vehicle.mileage)
-
+    if not new_id:
+        print("Vehicle not added ")
+        return
+    
     new_vehicle.id = new_id
     garage.append(new_vehicle)
 
@@ -156,8 +159,11 @@ def delete_vehicle(garage):
 
     selected_car = garage[user_delete]
 
-    delete_vehicle_db(selected_car.id)
+    success = delete_vehicle_db(selected_car.id)
 
-    deleted_car = garage.pop(user_delete)
 
-    print(f"You Deleted {deleted_car}")
+    if success:
+        deleted_car = garage.pop(user_delete)
+        print(f"you have deleted {deleted_car}")
+    else:
+        print("Vehicle deletion failed")
